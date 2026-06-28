@@ -47,7 +47,6 @@ The Hermes Agent source is included as a **git submodule** inside this repo, pin
 
 ```bash
 # 1. Clone the repo with the submodule
-#    (add --depth 1 if 'No url found for submodule path' errors occur)
 git clone --recurse-submodules https://github.com/ilan4ever/hermes-desktop.git
 cd hermes-desktop
 
@@ -135,11 +134,13 @@ The submodule is pinned to a specific commit. To update to a newer Hermes versio
 ```bash
 cd hermes-agent
 git fetch origin
-git checkout <new-commit-hash>
+git checkout origin/main
 cd ..
 git add hermes-agent
 git commit -m "Bump Hermes agent to <describe change>"
 ```
+
+Always test that the desktop app works before pushing a submodule bump.
 
 Always test that the desktop app works before pushing a submodule bump.
 
