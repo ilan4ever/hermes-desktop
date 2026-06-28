@@ -54,11 +54,13 @@ curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scri
 ## Install
 
 ```bash
-git clone https://github.com/ilan4ever/hermes-desktop.git
+git clone --recurse-submodules https://github.com/ilan4ever/hermes-desktop.git
 cd hermes-desktop
 npm install
 npm run dev
 ```
+
+This also checks out the Hermes Agent source (pinned at a tested version) so you can develop and debug both together.
 
 This starts Vite (hot-reload renderer) + Electron, which boots the Python backend.
 

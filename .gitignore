@@ -20,6 +20,13 @@ build/install-stamp.json
 *.swo
 *~
 
+# Submodule: Hermes agent Python venv + node_modules
+hermes-agent/venv/
+hermes-agent/.venv/
+hermes-agent/node_modules/
+hermes-agent/__pycache__/
+hermes-agent/*.pyc
+
 # OS
 .DS_Store
 Thumbs.db
