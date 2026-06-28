@@ -11,8 +11,7 @@
 <p align="center">
   <a href="#features">Features</a> •
   <a href="#install">Install</a> •
-  <a href="#quick-start">Quick Start</a> •
-  <a href="#development">Development</a> •
+  <a href="#usage">Usage</a> •
   <a href="#credits">Credits</a>
 </p>
 
@@ -42,50 +41,17 @@ Stop juggling terminals. Talk to your AI, see what it's doing, browse files, run
 
 ## Prerequisites
 
-You only need the **Hermes CLI installed**:
+You need the **Hermes CLI** installed first. The desktop app uses the same config, API keys, sessions, and skills.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
 ```
 
-The desktop app uses the same config, API keys, sessions, and skills — nothing extra to configure.
+> **Windows:** Use WSL2 for the Hermes CLI. The desktop app itself runs natively on Windows.
 
 ---
 
 ## Install
-
-### Option 1 — One-line install (Agent + Desktop)
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash -s -- --include-desktop
-```
-
-### Option 2 — Already have Hermes CLI?
-
-```bash
-hermes desktop
-```
-
-The first time you run it, the app builds itself (Electron + React) and launches. Pick a provider and model on first launch; everything else is already set up.
-
-### Option 3 — Prebuilt installers
-
-Available on the [releases page](https://github.com/NousResearch/hermes-agent/releases) — `.dmg` (macOS), `.exe` / `.msi` (Windows), `.AppImage` / `.deb` / `.rpm` (Linux).
-
----
-
-## Quick Start
-
-1. **Install** the Hermes CLI (see above).
-2. **Run** `hermes desktop`.
-3. **Pick** a provider (e.g. OpenRouter) and a model.
-4. **Start chatting** — type a message and watch the agent work.
-
-Slash commands like `/model`, `/compress`, `/skills`, and `/personality` all work in the desktop UI too.
-
----
-
-## Development
 
 ```bash
 git clone https://github.com/ilan4ever/hermes-desktop.git
@@ -95,6 +61,25 @@ npm run dev
 ```
 
 This starts Vite (hot-reload renderer) + Electron, which boots the Python backend.
+
+If you already have the Hermes CLI installed, you can also launch the desktop from there:
+
+```bash
+hermes desktop
+```
+
+The app builds itself (Electron + React) on first run and launches. Pick a provider and model to get started.
+
+---
+
+## Usage
+
+1. **Install** the Hermes CLI (see prerequisites).
+2. **Run** `npm run dev` from the cloned repo, or `hermes desktop`.
+3. **Pick** a provider (e.g. OpenRouter) and a model.
+4. **Start chatting** — type a message and watch the agent work.
+
+Slash commands like `/model`, `/compress`, `/skills`, and `/personality` all work in the desktop UI too.
 
 ### Useful flags
 
