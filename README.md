@@ -39,32 +39,37 @@ Stop juggling terminals. Talk to your AI, see what it's doing, browse files, run
 
 ---
 
-## Prerequisites
-
-You need the **Hermes CLI** installed first. The desktop app uses the same config, API keys, sessions, and skills.
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
-```
-
-> **Windows:** Use WSL2 for the Hermes CLI. The desktop app itself runs natively on Windows.
-
----
-
 ## Install
 
+### Step-by-step
+
+The Hermes Agent source is included as a **git submodule** inside this repo, pinned to the exact version this desktop app was tested with. You get everything in one clone.
+
 ```bash
+# 1. Clone the repo with the submodule
 git clone --recurse-submodules https://github.com/ilan4ever/hermes-desktop.git
 cd hermes-desktop
+
+# 2. Install the Hermes CLI from the pinned submodule
+#    macOS / Linux:
+bash hermes-agent/scripts/install.sh
+#    Windows (PowerShell):
+# .\hermes-agent\scripts\install.ps1
+
+# 3. Install desktop dependencies
 npm install
+
+# 4. Launch
 npm run dev
 ```
 
-This also checks out the Hermes Agent source (pinned at a tested version) so you can develop and debug both together.
+The desktop app shares the same config, API keys, sessions, and skills as the CLI — nothing extra to configure.
 
-This starts Vite (hot-reload renderer) + Electron, which boots the Python backend.
+> **Windows:** The Hermes CLI requires WSL2. The desktop app itself runs natively on Windows.
 
-If you already have the Hermes CLI installed, you can also launch the desktop from there:
+### Already have Hermes CLI?
+
+You can also launch the desktop directly from the Hermes CLI itself:
 
 ```bash
 hermes desktop
@@ -90,7 +95,7 @@ Each time you run it, it stops the old Hermes Desktop process and launches a new
 
 ## Usage
 
-1. **Install** the Hermes CLI (see prerequisites).
+1. **Clone + install** (see above).
 2. **Run** `npm run dev` from the cloned repo, or `hermes desktop`.
 3. **Pick** a provider (e.g. OpenRouter) and a model.
 4. **Start chatting** — type a message and watch the agent work.
@@ -119,6 +124,23 @@ npm run pack           # Unpacked app (no installer)
 ```bash
 npm run fix && npm run type-check && npm run lint && npm run test:desktop:all
 ```
+
+---
+
+## Updating the Hermes agent
+
+The submodule is pinned to a specific commit. To update to a newer Hermes version:
+
+```bash
+cd hermes-agent
+git fetch origin
+git checkout <new-commit-hash>
+cd ..
+git add hermes-agent
+git commit -m "Bump Hermes agent to <describe change>"
+```
+
+Always test that the desktop app works before pushing a submodule bump.
 
 ---
 
