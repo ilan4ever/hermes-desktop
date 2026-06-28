@@ -127,6 +127,8 @@ The packaged app ships only the Electron shell. On first launch it installs the 
 
 Built and maintained by **ILAN AVIV**. This desktop app is a native UI wrapper around the [Hermes Agent](https://github.com/NousResearch/hermes-agent) by [Nous Research](https://nousresearch.com).
 
+For inquiries, feedback, or collaboration: [onevoiceai.in/contact](https://onevoiceai.in/contact/)
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
