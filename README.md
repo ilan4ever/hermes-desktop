@@ -47,6 +47,7 @@ The Hermes Agent source is included as a **git submodule** inside this repo, pin
 
 ```bash
 # 1. Clone the repo with the submodule
+#    (add --depth 1 if 'No url found for submodule path' errors occur)
 git clone --recurse-submodules https://github.com/ilan4ever/hermes-desktop.git
 cd hermes-desktop
 
