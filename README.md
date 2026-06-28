@@ -70,6 +70,20 @@ hermes desktop
 
 The app builds itself (Electron + React) on first run and launches. Pick a provider and model to get started.
 
+### Windows — one-command runner
+
+A PowerShell script is included that kills any previous instance and starts fresh:
+
+```powershell
+.\run.ps1
+```
+
+Each time you run it, it stops the old Hermes Desktop process and launches a new one. Add the `-Build` flag to build for production first:
+
+```powershell
+.\run.ps1 -Build
+```
+
 ---
 
 ## Usage
