@@ -142,8 +142,10 @@ export function AppShell({
         <PaneShell className="min-h-0 flex-1">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute left-0 top-0 z-1 h-(--titlebar-height) w-(--titlebar-controls-left) [-webkit-app-region:drag]"
-          />
+            className="pointer-events-none absolute left-0 top-0 z-1 flex h-(--titlebar-height) w-(--titlebar-controls-left) items-center justify-center gap-2 pl-0.5 [-webkit-app-region:drag]"
+          >
+            <img alt="Hermes" className="h-5 w-5 shrink-0 opacity-80" src="/logo.png" />
+          </div>
           <div
             aria-hidden="true"
             className="pointer-events-none absolute top-0 z-1 h-(--titlebar-height) left-[calc(var(--titlebar-controls-left)+(var(--titlebar-control-size)*2)+0.75rem)] right-[calc(var(--titlebar-tools-right)+var(--titlebar-tools-width)+0.75rem)] [-webkit-app-region:drag]"
