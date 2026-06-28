@@ -3484,7 +3484,7 @@ function createWindow() {
     height: 800,
     minWidth: 900,
     minHeight: 620,
-    title: 'Hermes',
+    title: 'Hermes Desktop',
     // Frameless title bar on every platform so the renderer can paint the
     // "hide sidebar" button (and other left-side titlebar tools) flush with
     // the top edge — matching the macOS layout where the traffic lights sit
@@ -3701,7 +3701,7 @@ ipcMain.handle('hermes:api', async (_event, request) => {
 ipcMain.handle('hermes:notify', (_event, payload) => {
   if (!Notification.isSupported()) return false
   new Notification({
-    title: payload?.title || 'Hermes',
+    title: payload?.title || 'Hermes Desktop',
     body: payload?.body || '',
     silent: Boolean(payload?.silent)
   }).show()
