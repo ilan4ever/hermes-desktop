@@ -142,8 +142,6 @@ git commit -m "Bump Hermes agent to <describe change>"
 
 Always test that the desktop app works before pushing a submodule bump.
 
-Always test that the desktop app works before pushing a submodule bump.
-
 ---
 
 ## Troubleshooting
